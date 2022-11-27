@@ -30,7 +30,7 @@ const CategoryWiseProduct = () => {
                             <p>{product_description}</p>
                         </div>
                         <div className="card-actions px-8 pb-4">
-                            <button className="btn btn-primary">Buy Now</button>
+                            <button className="btn btn-primary">Book Now</button>
                         </div>
                     </div>
                 </div>
