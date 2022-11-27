@@ -5,6 +5,7 @@ import CategoryWiseProduct from "../../Pages/CategoryWiseProduct/CategoryWisePro
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp";
+import WrongPage from "../../Pages/WrongPage/WrongPage";
 
 export const router = createBrowserRouter([
     {
@@ -33,7 +34,11 @@ export const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
             },
         ]
-    }
+    },
+    {
+        path: '*',
+        element: <WrongPage></WrongPage>
+       }
 ])
 
 export default router;

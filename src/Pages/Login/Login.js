@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
@@ -6,19 +7,18 @@ const Login = () => {
 
     const { login, providerLogin } = useContext(AuthContext);
     // const navigate = useNavigate();
-    // useTitle('Login');
-    // const googleProvider = new GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
 
-    //for google login 
-    // const handelGoogleSignIn = () => {
-    //     providerLogin(googleProvider)
-    //         .then(result => {
-    //             const user = result.user;
-    //             console.log(user);
-    //             navigate('/');
-    //         })
-    //         .catch(err => console.error(err));
-    // }
+    // for google login 
+    const handelGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                // navigate('/');
+            })
+            .catch(err => console.error(err));
+    }
 
     //getting users info
     const handelLogin = event => {
@@ -64,7 +64,7 @@ const Login = () => {
                     </form>
                     <p className='text-center mb-6'>New to this site? <Link className='text-blue-600 font-bold' to='/signup'>Sign Up</Link></p>
 
-                    {/* <button onClick={handelGoogleSignIn} class="btn btn-outline btn-primary mx-8 mb-4">Login With Google</button> */}
+                    <button onClick={handelGoogleSignIn} class="btn btn-outline btn-primary mx-8 mb-4">Login With Google</button>
                 </div>
             </div>
         </div>
