@@ -4,9 +4,7 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 
 const SignUp = () => {
-    // useTitle('SignUp');
     const { createUser } = useContext(AuthContext);
-    // const navigate = useNavigate();
 
     //getting users info
     const handelSignUp = event => {
@@ -20,7 +18,6 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
-                // navigate('/login');
             })
             .catch(err => console.error(err));
 

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
 
-    // const { login, providerLogin } = useContext(AuthContext);
+    const { login, providerLogin } = useContext(AuthContext);
     // const navigate = useNavigate();
     // useTitle('Login');
     // const googleProvider = new GoogleAuthProvider();
@@ -25,14 +26,14 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        // login(email, password)
-        //     .then(result => {
-        //         const user = result.user;
-        //         console.log(user);
-        //         form.reset();
-        //         // navigate('/');
-        //     })
-        //     .catch(err => console.error(err));
+        login(email, password)
+        .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                // navigate('/');
+            })
+        .catch(err => console.error(err));
     }
 
     return (

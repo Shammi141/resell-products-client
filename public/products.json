@@ -3,7 +3,6 @@
         "category_id": "01",
         "category_name": "Bed Room Products",
 
-        "_id": "635a0c0b64a6d231228942ae",
         "product_picture": "https://rflbestbuy.com/images/detailed/76/63_0v09-6u.jpg",
         "product_name": "Single Bed",
         "location": "Motijheel",
@@ -19,7 +18,6 @@
         "category_id": "02",
         "category_name": "Kitchen Room Products",
 
-        "_id": "635a0c0b64a6d231228942ag",
         "product_picture": "https://media.self.com/photos/60413f17f5d81c0d9ed0257b/master/pass/kitchenaid%20measuring%20cups.png",
         "product_name": "Kitchen Tools",
         "location": "Paltan",
@@ -36,7 +34,6 @@
         "category_id": "03",
         "category_name": "Dining Room Products",
 
-        "_id": "635a0c0b64a6d231228942ai",
         "product_picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRc9OBNPys-Rk5MQaAfQdIAgxhs4EvmRUGdg&usqp=CAU",
         "product_name": "Dining Table Set",
         "location": "Dhanmondi",
