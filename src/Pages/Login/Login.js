@@ -1,13 +1,16 @@
-import { GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { GoogleAuthProvider, signInAnonymously } from 'firebase/auth';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
 
     const { login, providerLogin } = useContext(AuthContext);
-    // const navigate = useNavigate();
     const googleProvider = new GoogleAuthProvider();
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
 
     // for google login 
     const handelGoogleSignIn = () => {
@@ -17,7 +20,9 @@ const Login = () => {
                 console.log(user);
                 // navigate('/');
             })
-            .catch(err => console.error(err));
+            .catch(err => {
+                console.error(err)
+            });
     }
 
     //getting users info
@@ -26,12 +31,13 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+        // signIn(data.email, data.password)-----------as similar
         login(email, password)
         .then(result => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
-                // navigate('/');
+                navigate(from, {replace: true});
             })
         .catch(err => console.error(err));
     }
@@ -63,6 +69,8 @@ const Login = () => {
                         </div>
                     </form>
                     <p className='text-center mb-6'>New to this site? <Link className='text-blue-600 font-bold' to='/signup'>Sign Up</Link></p>
+
+                    <div className="divider">OR</div>
 
                     <button onClick={handelGoogleSignIn} class="btn btn-outline btn-primary mx-8 mb-4">Login With Google</button>
                 </div>

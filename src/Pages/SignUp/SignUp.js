@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 
 const SignUp = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUser } = useContext(AuthContext);
 
     //getting users info
     const handelSignUp = event => {
@@ -17,6 +18,16 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                toast('User created successfully!');
+                const userInfo = {
+                    displayName: name
+                }
+                updateUser(userInfo)
+                .then(() =>{
+
+                })
+                .catch(err => console.error(err));
+
                 form.reset();
             })
             .catch(err => console.error(err));

@@ -5,7 +5,7 @@ import BookingModal from '../BookingModal/BookingModal';
 
 const CategoryWiseProductData = ({ selectedDate }) => {
     const data = useLoaderData();
-    const [treatment, setTreatment] = useState(null);
+    const [products, setProducts] = useState(null);
 
     return (
         <div>
@@ -42,7 +42,7 @@ const CategoryWiseProductData = ({ selectedDate }) => {
                                     <label
                                         htmlFor="booking-modal"
                                         className="btn btn-primary"
-                                        onClick={() => setTreatment(product)}
+                                        onClick={() => setProducts(product)}
                                     >Book Now</label>
                                 </div>
                             </div>
@@ -52,11 +52,11 @@ const CategoryWiseProductData = ({ selectedDate }) => {
             </div>
 
             {
-                treatment &&
+                products &&
                 <BookingModal
                     selectedDate={selectedDate}
-                    treatment={treatment}
-                    setTreatment = {setTreatment}
+                    products={products}
+                    setProducts = {setProducts}
                 ></BookingModal>
             }
 
