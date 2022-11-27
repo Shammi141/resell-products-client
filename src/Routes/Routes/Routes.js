@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
     {
         path: '*',
         element: <WrongPage></WrongPage>
-       }
+    }
 ])
 
 export default router;
