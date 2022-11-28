@@ -1,15 +1,20 @@
 import { format } from 'date-fns';
-import React from 'react';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const BookingModal = ({products, selectedDate, setProducts}) => {
     const { product_name, release_price } = products;
     const date = format(selectedDate, 'PP');
 
+    const {user} = useContext(AuthContext);
+
     const handelBooking = event =>{
         event.preventDefault();
         const form = event.target;
         const price = form.price.value;
-        const name = form.name.value;
+        const name = form.uname.value;
+        const pname = form.pname.value;
         const email = form.email.value;
         const phone = form.phone.value;
         const location = form.location.value;
@@ -17,12 +22,30 @@ const BookingModal = ({products, selectedDate, setProducts}) => {
         const booking = {
             selectedDate: date,
             name,
+            pname,
             price,
             phone,
             location,
             email
         }
-        setProducts(null);
+        // console.log(booking);
+        fetch('http://localhost:5000/bookings', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.acknowledged){
+                setProducts(null);
+                toast.success('Booking confirmed');
+            }
+        })
+
+        
     }
     return (
         <>
@@ -35,9 +58,11 @@ const BookingModal = ({products, selectedDate, setProducts}) => {
                     <form onSubmit={handelBooking} className='grid grid-cols-1 gap-3 mt-8'>
                         <input type="text" value={`Booking date: ${date}`} className="input input-bordered w-full" disabled />
 
-                        <input name='email' type="email" placeholder="Email address" className="input input-bordered w-full" />
+                        <input name='email' type="email" defaultValue={user?.email} placeholder="Email address" className="input input-bordered w-full"  disabled/>
 
-                        <input name='name' type="text" value={`${product_name}`} className="input input-bordered w-full" disabled />
+                        <input name='uname' type="text" defaultValue={user?.displayName} placeholder="User Name" className="input input-bordered w-full"  disabled/>
+
+                        <input name='pname' type="text" value={`${product_name}`} className="input input-bordered w-full" disabled />
 
                         <input name='price' type="text" value={`$${release_price}`} className="input input-bordered w-full" disabled />
 

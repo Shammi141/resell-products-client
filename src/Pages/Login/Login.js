@@ -1,5 +1,5 @@
-import { GoogleAuthProvider, signInAnonymously } from 'firebase/auth';
-import React, { useContext, useState } from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 

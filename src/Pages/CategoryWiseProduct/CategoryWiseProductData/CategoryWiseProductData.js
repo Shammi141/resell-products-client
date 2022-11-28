@@ -4,8 +4,15 @@ import { useLoaderData } from 'react-router-dom';
 import BookingModal from '../BookingModal/BookingModal';
 
 const CategoryWiseProductData = ({ selectedDate }) => {
-    const data = useLoaderData();
+    const allData = useLoaderData();
     const [products, setProducts] = useState(null);
+
+    // const { data, isLoading} = useQuery({
+    //     queryKey: ['products', 'id'],
+    //     queryFn: async () =>{
+    //         const data = await
+    //     }
+    // })
 
     return (
         <div>
@@ -14,7 +21,7 @@ const CategoryWiseProductData = ({ selectedDate }) => {
 
             <div className='grid gap-12 grid-cols-1 lg:grid-cols-2'>
                 {
-                    data?.map(product =>{
+                    allData?.map(product =>{
                         return <div className="card bg-base-100 shadow-xl ">
                             <figure className="px-10 pt-10">
                                 <img src={product.product_picture} alt="Shoes" className="rounded-xl" />
