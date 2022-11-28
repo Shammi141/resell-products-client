@@ -1,12 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import useToken from '../../hooks/useToken';
 
 
 const SignUp = () => {
     const { createUser, updateUser } = useContext(AuthContext);
+    const [createdUserEmail, setCreatedUserEmail] = useState('');
+    const [token] = useToken(createdUserEmail);
     const navigate = useNavigate();
+
+    if(token){
+        navigate('/');
+    }
 
     //getting users info
     const handelSignUp = event => {
@@ -25,7 +32,7 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                 .then(() =>{
-                    navigate('/');
+                    saveUser( name, email);
                 })
                 .catch(err => console.error(err));
 
@@ -34,6 +41,25 @@ const SignUp = () => {
             .catch(err => console.error(err));
 
     }
+
+    //for saving new users info in database
+    const saveUser = (name, email) =>{
+        const user = {name, email};
+        fetch(`http://localhost:5000/users`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => {
+            setCreatedUserEmail(email);
+        })
+    }
+
+    
+
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content w-1/2">
