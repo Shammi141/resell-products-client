@@ -41,7 +41,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost normal-case text-xl text-blue-600">
+                <Link to="/" className="btn btn-ghost normal-case text-2xl text-cyan-800 font-bold">
                     Reseller With Buyer
                 </Link>
             </div>

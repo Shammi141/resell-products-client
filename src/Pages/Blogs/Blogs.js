@@ -5,8 +5,8 @@ const Blogs = () => {
     return (
         <div>
             <div className='m-20'>
-                <h2 className='text-4xl text-center font-bold text-blue-600 mb-7'>Explore Your Knowledge</h2>
-                <div className='blog my-3'>
+                <h2 className='text-4xl text-center font-bold text-cyan-800 mb-7'>Explore Your Knowledge</h2>
+                <div className='blog my-3 bg-zinc-300'>
                     <h5 className='text-xl font-bold'>1. What are the different ways to manage a state in a React application?</h5>
                     <p><small>There are four main types of state you need to properly manage in your React apps: <br />
 
@@ -26,12 +26,12 @@ const Blogs = () => {
                         - Server state Data that comes from an external server that must be integrated with our UI state. <br />
                         - URL state Data that exists on our URLs, including the pathname and query parameters. </small></p>
                 </div>
-                <div className='blog my-3'>
+                <div className='blog my-3 bg-zinc-300'>
                     <h5 className='text-xl font-bold'>2. How does prototypical inheritance work?</h5>
                     <p><small>The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object.setPrototypeOf. Nowadays, in modern language, it is being set using __proto__.
                     </small></p>
                 </div>
-                <div className='blog my-3'>
+                <div className='blog my-3 bg-zinc-300'>
                     <h5 className='text-xl font-bold'>3. What is a unit test? Why should we write unit tests?</h5>
                     <p><small>
                         Unit testing is a software development process in which the smallest testable parts of an application, called units, are individually and independently scrutinized for proper operation. <br />
@@ -41,7 +41,7 @@ const Blogs = () => {
 
                     </small></p>
                 </div>
-                <div className='blog my-3'>
+                <div className='blog my-3 bg-zinc-300'>
                     <h5 className='text-xl font-bold'>4. React vs. Angular vs. Vue?</h5>
                     <p><small>
                         Vue provides higher customizability and hence is easier to learn than Angular or React. <br />

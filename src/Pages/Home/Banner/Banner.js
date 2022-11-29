@@ -11,7 +11,7 @@ const Banner = () => {
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src={img1} alt="" className="w-full h-2/3 carousel-img" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-20 right-5 top-1/3">
-                        <h1 className='text-4xl font-bold text-blue-600'>
+                        <h1 className='text-4xl font-bold text-cyan-700'>
                             Design Your Home <br />
                             With Your Wanted Items In Low Budget <br />
                         </h1>
@@ -25,7 +25,7 @@ const Banner = () => {
                 <div id="slide2" className="carousel-item relative w-full">
                     <img src={img2} alt="" className="w-full h-2/3" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-20 right-5 top-1/3">
-                        <h1 className='text-4xl font-bold text-blue-600'>
+                        <h1 className='text-4xl font-bold text-cyan-700'>
                             Design Your Home <br />
                             With Your Wanted Items In Low Budget <br />
                         </h1>
@@ -39,7 +39,7 @@ const Banner = () => {
                 <div id="slide3" className="carousel-item relative w-full">
                     <img src={img3} alt="" className="w-full h-2/3" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-20 right-5 top-1/3">
-                        <h1 className='text-4xl font-bold text-blue-600'>
+                        <h1 className='text-4xl font-bold text-cyan-700'>
                             Design Your Home <br />
                             With Your Wanted Items In Low Budget <br />
                         </h1>

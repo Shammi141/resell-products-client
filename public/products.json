@@ -9,7 +9,7 @@
         "release_price": "95",
         "original_price": "120",
         "years_of_use": "2 years",
-        "posted_date": "32.11.2022",
+        "posted_date": "02.11.2022",
         "position": "Excellent",
         "seller_name": "Tauhid Khan",
         "product_description": "This bed is made from well wood. It is strong enough."
@@ -19,16 +19,16 @@
         "category_id": "638391982f781b83922b9af0",
         "category_name": "Bed Room Products",
         
-        "product_picture": "https://rflbestbuy.com/images/detailed/76/63_0v09-6u.jpg",
-        "product_name": "Single Light",
-        "location": "Motijheel",
-        "release_price": "95",
-        "original_price": "120",
+        "product_picture": "https://images.othoba.com/images/thumbs/0375075_auto-led-digital-sensor-mushroom-light_300.jpeg",
+        "product_name": "Lamp Light",
+        "location": "Naya Paltan",
+        "release_price": "17",
+        "original_price": "30",
         "years_of_use": "2 years",
-        "posted_date": "32.11.2022",
+        "posted_date": "12.11.2022",
         "position": "Excellent",
-        "seller_name": "Tauhid Khan",
-        "product_description": "This bed is made from well wood. It is strong enough."
+        "seller_name": "Samim Hasan",
+        "product_description": "This is a good quality product. "
         
     },
     {
@@ -43,23 +43,23 @@
         "years_of_use": "3 months",
         "posted_date": "32.11.2022",
         "position": "Relative",
-        "seller_name": "Jeyasmin Rahman",
+        "seller_name": "Sakib Khan",
         "product_description": "Its color is baby pink. Every item is still good for use. It looks like just new item."
     },
     {
         "category_id": "638391982f781b83922b9af1",
         "category_name": "Kitchen Room Products",
 
-        "product_picture": "https://media.self.com/photos/60413f17f5d81c0d9ed0257b/master/pass/kitchenaid%20measuring%20cups.png",
+        "product_picture": "https://images.othoba.com/images/thumbs/0372278_vigo-ns-glamour-karai-deep-fry-panwith-lid-red-24-cm.jpeg",
         "product_name": "Fry Pan",
-        "location": "Paltan",
-        "release_price": "12",
-        "original_price": "40",
-        "years_of_use": "3 months",
-        "posted_date": "32.11.2022",
-        "position": "Relative",
-        "seller_name": "Jeyasmin Rahman",
-        "product_description": "Its color is baby pink. Every item is still good for use. It looks like just new item."
+        "location": "Dhanmondi",
+        "release_price": "120",
+        "original_price": "280",
+        "years_of_use": "10 months",
+        "posted_date": "09.11.2022",
+        "position": "Good",
+        "seller_name": "Tauhid Vuiya",
+        "product_description": "Its quite handy and easy to cook. No burning."
     },
 
     {
@@ -74,22 +74,22 @@
         "years_of_use": "6 years",
         "posted_date": "22.11.2022",
         "position": "Good",
-        "seller_name": "Tauhid Khan",
+        "seller_name": "Karim Mahmud",
         "product_description": "6 seat chair with dining table."
     },
     {
         "category_id": "638391982f781b83922b9af2",
         "category_name": "Dining Room Products",
 
-        "product_picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRc9OBNPys-Rk5MQaAfQdIAgxhs4EvmRUGdg&usqp=CAU",
-        "product_name": "Fan Set",
-        "location": "Dhanmondi",
-        "release_price": "180",
-        "original_price": "290",
-        "years_of_use": "6 years",
-        "posted_date": "22.11.2022",
-        "position": "Good",
-        "seller_name": "Tauhid Khan",
-        "product_description": "6 seat chair with dining table."
+        "product_picture": "https://biyebazaar.com/uploads/product_image/product_3768_1.jpg",
+        "product_name": "Plate Set",
+        "location": "Badda",
+        "release_price": "160",
+        "original_price": "300",
+        "years_of_use": "2 years",
+        "posted_date": "18.11.2022",
+        "position": "Excellent",
+        "seller_name": "Sumon Mia",
+        "product_description": "34 set dining set."
     }
 ]

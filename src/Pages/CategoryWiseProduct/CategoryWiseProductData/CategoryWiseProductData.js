@@ -1,23 +1,20 @@
 import { format } from 'date-fns';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+import useUserType from '../../../hooks/useUserType';
 import BookingModal from '../BookingModal/BookingModal';
 
 const CategoryWiseProductData = ({ selectedDate }) => {
+    const {user} = useContext(AuthContext);
     const allData = useLoaderData();
     const [products, setProducts] = useState(null);
-
-    // const { data, isLoading} = useQuery({
-    //     queryKey: ['products', 'id'],
-    //     queryFn: async () =>{
-    //         const data = await
-    //     }
-    // })
-
+    const [userType] = useUserType(user?.email);
+  
     return (
         <div>
 
-            <p>You have selected date: {format(selectedDate, 'PP')}</p>
+            <p className='text-center font-bold text-cyan-700 my-10'>You have selected date: {format(selectedDate, 'PP')} for booking your product.</p>
 
             <div className='grid gap-12 grid-cols-1 lg:grid-cols-2'>
                 {
@@ -27,31 +24,37 @@ const CategoryWiseProductData = ({ selectedDate }) => {
                                 <img src={product.product_picture} alt="Shoes" className="rounded-xl" />
                             </figure>
                             <div className="card-body items-center text-center">
-                                <h2 className="card-title">{product.product_name}</h2>
+                                <h2 className="card-title text-cyan-700 font-bold">{product.name}</h2>
 
                                 <div className='flex gap-4'>
-                                    <small>Current Price: <small className='bg-slate-300 px-2 rounded text-red-600 font-bold text-xl'>${product.release_price}</small></small>
-                                    <small>Time duration of used: <small className='bg-slate-300 px-2 rounded font-bold'>{product.years_of_use}</small></small>
-                                    <small>Original Price: <small className='bg-slate-300 px-2 rounded font-bold'>${product.original_price}</small></small>
+                                    <small>Current Price: <small className='bg-slate-300 px-2 rounded text-red-600 font-bold text-xl'>${product.releaseprice}</small></small>
+                                    <small>Time duration of used: <small className='bg-slate-300 px-2 rounded font-bold'>{product.useyear}</small></small>
+                                    <small>Original Price: <small className='bg-slate-300 px-2 rounded font-bold'>${product.originalprice}</small></small>
                                 </div>
                             </div>
-                            <p className='px-8'>Seller Name: {product.seller_name}</p>
 
                             <div>
+                                <p className='px-8'>Seller Name: <small className='bg-slate-300 px-2 rounded font-bold'>{product.uname}</small></p>
+                                <p className='px-8'>Status: <small className='bg-slate-300 px-2 rounded font-bold'>{product.status}</small></p>
                                 <div className='card-body'>
-                                    <small>Posted date: <small className='bg-slate-300 px-2 rounded font-bold'>{product.posted_date}</small></small>
-                                    <small>Product Condition: <small className='bg-slate-300 px-2 rounded font-bold'>{product.position}</small></small>
-                                    <small>Location: <small className='bg-slate-300 px-2 rounded font-bold'>{product.location}</small></small>
-                                    <p>{product.product_description}</p>
+                                    <p>Posted date: <small className='bg-slate-300 px-2 rounded font-bold'>{product.date}</small></p>
+
+                                    <p>Product Condition: <small className='bg-slate-300 px-2 rounded font-bold'>{product.condition}</small></p>
+
+                                    <p>Location: <small className='bg-slate-300 px-2 rounded font-bold'>{product.location}</small></p>
+
+                                    <p>Description: <small className='bg-slate-300 px-2 rounded font-bold'>{product.description}</small></p>
                                 </div>
 
-                                <div className="card-actions px-8 pb-4">
-                                    <label
-                                        htmlFor="booking-modal"
-                                        className="btn btn-primary"
-                                        onClick={() => setProducts(product)}
-                                    >Book Now</label>
-                                </div>
+                                { userType === 'buyer' &&
+                                    <div className="card-actions px-8 pb-4">
+                                        <label
+                                            htmlFor="booking-modal"
+                                            className="btn btn-info text-white"
+                                            onClick={() => setProducts(product)}
+                                        >Book Now</label>
+                                    </div>
+                                }
                             </div>
                         </div>
                     })

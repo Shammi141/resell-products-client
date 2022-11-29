@@ -10,7 +10,7 @@ const ProductCategory = () => {
     }, []);
     return (
         <div>
-            <p className="text-center text-4xl font-bold text-blue-600 my-10">Product Categories</p>
+            <p className="text-center text-4xl font-bold text-cyan-800 my-10">Product Categories</p>
 
             <div className='grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {

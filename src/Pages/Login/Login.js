@@ -12,6 +12,8 @@ const Login = () => {
     const [token] = useToken(loginUserEmail);
     const location = useLocation();
     const navigate = useNavigate();
+    const [createdUserEmail, setCreatedUserEmail] = useState('');
+
 
     const from = location.state?.from?.pathname || '/';
 
@@ -25,13 +27,29 @@ const Login = () => {
         providerLogin(googleProvider)
             .then(result => {
                 const user = result.user;
-                console.log(user);
-                // setLoginUserEmail(email);
-                // navigate('/');
+                const name = user.displayName;
+                const email = user.email;
+                const userType = 'buyer';
+                saveUser(name, email, userType);
             })
             .catch(err => {
                 console.error(err)
             });
+    }
+
+    const saveUser = (name, email, userType) => {
+        const user = { name, email, userType };
+        fetch(`http://localhost:5000/users`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setCreatedUserEmail(email);
+            })
     }
 
     //getting users info
@@ -40,7 +58,7 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        // signIn(data.email, data.password)-----------as similar
+        
         login(email, password)
         .then(result => {
                 const user = result.user;
@@ -55,7 +73,7 @@ const Login = () => {
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content w-1/2">
                 <div className="card w-full max-w-sm shadow-2xl bg-base-100">
-                    <h2 className='text-xl text-center mt-5 font-bold text-blue-600'>Login Here</h2>
+                    <h2 className='text-xl text-center mt-5 font-bold text-sky-600'>Login Here</h2>
 
                     <form onSubmit={handelLogin} className="card-body">
                         <div className="form-control">
@@ -74,14 +92,14 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control ">
-                            <input className="btn btn-primary" type="submit" value="Login" />
+                            <input className="btn btn-info text-white" type="submit" value="Login" />
                         </div>
                     </form>
-                    <p className='text-center mb-6'>New to this site? <Link className='text-blue-600 font-bold' to='/signup'>Sign Up</Link></p>
+                    <p className='text-center mb-6'>New to this site? <Link className='text-sky-600 font-bold' to='/signup'>Sign Up</Link></p>
 
                     <div className="divider">OR</div>
 
-                    <button onClick={handelGoogleSignIn} class="btn btn-outline btn-primary mx-8 mb-4">Login With Google</button>
+                    <button onClick={handelGoogleSignIn} class="btn btn-outline btn-info mx-8 mb-4">Login With Google</button>
                 </div>
             </div>
         </div>

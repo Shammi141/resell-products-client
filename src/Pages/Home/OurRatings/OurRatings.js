@@ -1,41 +1,56 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const OurRatings = () => {
     return (
-        <div className='my-20 '>
-            <h2 className='font-bold text-4xl my-10 text-center text-blue-600'>Give Us Your Precious Ratings</h2>
-            <div className="stats shadow flex items-center gap-5">
-                <div className="stat">
-                    <div className="stat-figure text-primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                    </div>
-                    <div className="stat-title">Total Likes</div>
-                    <div className="stat-value text-primary">15.6K</div>
-                    <div className="stat-desc text-blue-700">31% latest</div>
-                </div>
+        <div className='my-24 '>
+            <h2 className='font-bold text-5xl mb-10 text-center text-cyan-800'>Raise Your Hand To Save The World</h2>
 
-                <div className="stat">
-                    <div className="stat-figure text-secondary">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            <div className="hero min-h-screen bg-base-200">
+                <div className="hero-content flex-col lg:flex-row-reverse">
+                    <div className="text-center lg:text-left px-12 ">
+                        <h1 className="text-4xl font-bold text-cyan-700">Help Helpless To Find Happiness </h1>
+                        <p className="py-8 ">We have a vision to help helpless people by sending their necessary things (cloths, foods, medicines, money so on). You can contribute as you can to help those people and be a member of us. <br />
+                        <p className='font-bold my-3'>Your simple steps can save ones life also a family.</p></p>
                     </div>
-                    <div className="stat-title ">Total Views</div>
-                    <div className="stat-value text-secondary">1.1M</div>
-                    <div className="stat-desc text-blue-700">21% latest viewers</div>
-                </div>
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                        <div className="card-body">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Your Name</span>
+                                </label>
+                                <input type="text" placeholder="name" className="input input-bordered input-info" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Your Email</span>
+                                </label>
+                                <input type="email" placeholder="email" className="input input-bordered input-info" />
+                            </div>
+                            <select className="select select-info w-full max-w-xs">
+                                <option disabled selected>Select payment system</option>
+                                <option>Bkash</option>
+                                <option>Roket</option>
+                                <option>Vise Card</option>
+                                <option>By Bank</option>
+                            </select>
 
-                <div className="stat">
-                    <div className="stat-figure text-secondary">
-                        <div className="avatar online">
-                            <div className="w-16 rounded-full">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwLvEbdTKi1aFGjX-KzX6lb9EzTRcURDZ7_w&usqp=CAU" alt='' />
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
+                                </label>
+                                <input type="password" placeholder="password" className="input input-bordered input-info" />
+                                <label className="label">
+                                    <span>Email Us: <Link href="#" className="label-text-alt link link-hover">reseller@buyer.com</Link></span>
+                                    
+                                </label>
+                            </div>
+                            <div className="form-control mt-6">
+                                <button className="btn btn-info text-white">Submit</button>
                             </div>
                         </div>
                     </div>
-                    <div className="stat-title">Satisfied</div>
-                    <div className="stat-value">87%</div>
-                    <div className="stat-desc text-blue-700">13 New are coming</div>
                 </div>
-
             </div>
         </div>
     );
