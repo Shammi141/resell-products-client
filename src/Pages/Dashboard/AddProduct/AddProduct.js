@@ -8,8 +8,8 @@ const AddProduct= () => {
     const {user} =  useContext(AuthContext);
     const [category, setCategory] = useState('');
     const imageHostKey = process.env.REACT_APP_imagebb_apikey;
-    console.log(imageHostKey)
     const navigate = useNavigate();
+    const [image, setImage] = useState('');
 
     const handelCategory = event =>{
         setCategory(event.target.value);
@@ -50,11 +50,6 @@ const AddProduct= () => {
         const useyear = form.useyear.value;
         const date = formateTime();
 
-        // const img = form.img.value;
-        const img = form.img.files;
-        // const img = form.img.FileList[0];
-        console.log(img);
-
 
 
         const categoryId = category;
@@ -62,6 +57,7 @@ const AddProduct= () => {
         const location = form.location.value;
         const advertise = 'No';
         const email = user.email;
+        const img = form.img.value;
         const uname = user.displayName;
         const status = 'Available';
         form.reset();
@@ -85,7 +81,7 @@ const AddProduct= () => {
         }
 
         console.log(newProduct);
-        fetch(`http://localhost:5000/dashboard/addproduct`, {
+        fetch(`https://resell-products-server.vercel.app/dashboard/addproduct`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -156,9 +152,9 @@ const AddProduct= () => {
 
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Upload Image</span>
+                                        <span className="label-text">Upload Image URL</span>
                                     </label>
-                                    <input type="file" name='img' placeholder="image here" className="input input-bordered input-info" required />
+                                    <input type="text" name='img' placeholder="image here" className="input input-bordered input-info" required />
                                 </div>
 
                                 <div className="form-control">

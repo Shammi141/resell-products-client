@@ -8,6 +8,7 @@ import AllBuyer from "../../Pages/Dashboard/AllBuyer/AllBuyer";
 import AllSeller from "../../Pages/Dashboard/AllSeller/AllSeller";
 import MyBooking from "../../Pages/Dashboard/MyBooking/MyBooking";
 import MyProduct from "../../Pages/Dashboard/MyProduct/MyProduct";
+import ReportedItems from "../../Pages/Dashboard/ReportedItems/ReportedItems";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp";
@@ -41,7 +42,7 @@ export const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <CategoryWiseProduct></CategoryWiseProduct>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://resell-products-server.vercel.app/products/${params.id}`)
             },
         ]
     },
@@ -61,14 +62,16 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/allseller',
-                element: <AdminRoute>
-                    <AllSeller></AllSeller>
-                </AdminRoute>
+                element: <AllSeller></AllSeller>
             },
             {
                 path: '/dashboard/allbuyer',
+                element: <AllBuyer></AllBuyer>
+            },
+            {
+                path: '/dashboard/reporteditems',
                 element: <AdminRoute>
-                    <AllBuyer></AllBuyer>
+                    <ReportedItems></ReportedItems>
                 </AdminRoute>
             },
             {

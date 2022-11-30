@@ -6,7 +6,7 @@ const AllBuyer = () => {
     const { data: users = [], refetch } = useQuery({
         queryKey: ['allbuyers'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/allbuyers`, {
+            const res = await fetch(`https://resell-products-server.vercel.app/allbuyers`, {
                 headers: {
                     'content-type': 'application/json',
                     authorization: `barer ${localStorage.getItem('accessToken')}`
@@ -18,20 +18,20 @@ const AllBuyer = () => {
     });
 
     const userDelete = id => {
-        fetch(`http://localhost:5000/userdelete/${id}`, {
+        fetch(`https://resell-products-server.vercel.app/userdelete/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
             }
         })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount > 0) {
-                    toast.success('Successfully deleted');
-                    refetch();
-                }
-            })
+        .then(res => res.json())
+        .then(data => {
+            if (data.deletedCount > 0) {
+                toast.success('Successfully deleted');
+                refetch();
+            }
+        })
     }
 
     return (

@@ -45,7 +45,7 @@ const SignUp = () => {
     //for saving new users info in database
     const saveUser = (name, email, userType) =>{
         const user = {name, email, userType};
-        fetch(`http://localhost:5000/users`, {
+        fetch(`https://resell-products-server.vercel.app/users`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

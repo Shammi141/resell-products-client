@@ -38,22 +38,22 @@ const DashboardLayout = () => {
                     <ul  className="menu p-4 w-80 bg-base-100 text-base-content">
                         {
                             userType === 'buyer' &&
-                            <li><Link to="/dashboard/myorders">My Orders</Link></li>
+                            <li><Link to="/dashboard/myorders" className='bg-cyan-700 text-white font-bold'>My Orders</Link></li>
                         }
                         {
                             userType === 'seller' &&
                             <>
-                                <li><Link to="/dashboard/myproducts">My Products</Link></li>
-                                <li><Link to="/dashboard/addproduct">Add Product</Link></li>
+                                <li><Link className='bg-cyan-700 text-white font-bold mb-2' to="/dashboard/myproducts">My Products</Link></li>
+                                <li><Link className='bg-cyan-700 text-white font-bold mb-2' to="/dashboard/addproduct">Add Product</Link></li>
                             </>
                             
                         }                       
                         {
                             isAdmin && 
                             <>
-                                <li><Link to="/dashboard/allbuyer">All Buyer</Link></li>
-                                <li><Link to="/dashboard/allseller">All Seller</Link></li>
-                                <li><Link to="/dashboard/reporteditems">Reported Items</Link></li>
+                                <li><Link className='bg-cyan-700 text-white font-bold mb-2' to="/dashboard/allbuyer">All Buyer</Link></li>
+                                <li><Link className='bg-cyan-700 text-white font-bold mb-2' to="/dashboard/allseller">All Seller</Link></li>
+                                <li><Link className='bg-cyan-700 text-white font-bold mb-2' to="/dashboard/reporteditems">Reported Items</Link></li>
                             </>
                         }
                     </ul>

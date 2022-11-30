@@ -33,13 +33,13 @@ const Login = () => {
                 saveUser(name, email, userType);
             })
             .catch(err => {
-                console.error(err)
+                console.error(err);
             });
     }
 
     const saveUser = (name, email, userType) => {
         const user = { name, email, userType };
-        fetch(`http://localhost:5000/users`, {
+        fetch(`https://resell-products-server.vercel.app/users`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -50,6 +50,8 @@ const Login = () => {
             .then(data => {
                 setCreatedUserEmail(email);
             })
+        navigate('/');
+
     }
 
     //getting users info

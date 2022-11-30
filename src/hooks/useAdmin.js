@@ -5,7 +5,7 @@ const useAdmin = email =>{
     const [isAdminLoading, setIsAdminLoading] = useState(true);
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/getusertype?email=${email}`, {
+            fetch(`https://resell-products-server.vercel.app/getusertype?email=${email}`, {
                 headers: {
                     'content-type': 'application/json',
                     authorization: `barer ${localStorage.getItem('accessToken')}`
