@@ -31,7 +31,6 @@ const AllSeller = () => {
                 toast.success('Successfully made verified');
                 refetch();
             }
-            console.log(data);
         })
     }
 
@@ -49,7 +48,6 @@ const AllSeller = () => {
                 toast.success('Successfully deleted');
                 refetch();
             }
-            console.log(data);
         })
     }
 

@@ -9,7 +9,7 @@ const Navbar = () => {
     const handelLogOut = () => {
         logOut()
         .then(() => { })
-        .catch(error => console.error('error:', error))
+        .catch(error => console.error('error', error))
     }
 
     const menuItems = <>

@@ -31,7 +31,6 @@ const AllBuyer = () => {
                     toast.success('Successfully deleted');
                     refetch();
                 }
-                console.log(data);
             })
     }
 
@@ -42,7 +41,6 @@ const AllBuyer = () => {
             <div className='bg-gray-300 rounded-md'>
                 <div className="overflow-x-auto p-8">
                     <table className="table w-full">
-
                         <thead>
                             <tr>
                                 <th></th>

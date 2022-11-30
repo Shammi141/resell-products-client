@@ -21,7 +21,7 @@ const CategoryWiseProductData = ({ selectedDate }) => {
                     allData?.map(product =>{
                         return <div className="card bg-base-100 shadow-xl ">
                             <figure className="px-10 pt-10">
-                                <img src={product.product_picture} alt="Shoes" className="rounded-xl" />
+                                <img src={product.img} alt="Shoes" className="rounded-xl" />
                             </figure>
                             <div className="card-body items-center text-center">
                                 <h2 className="card-title text-cyan-700 font-bold">{product.name}</h2>
@@ -34,6 +34,10 @@ const CategoryWiseProductData = ({ selectedDate }) => {
                             </div>
 
                             <div>
+                                {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg> */}
+
                                 <p className='px-8'>Seller Name: <small className='bg-slate-300 px-2 rounded font-bold'>{product.uname}</small></p>
                                 <p className='px-8'>Status: <small className='bg-slate-300 px-2 rounded font-bold'>{product.status}</small></p>
                                 <div className='card-body'>

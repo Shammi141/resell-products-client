@@ -1,10 +1,8 @@
 import { useState } from 'react';
-// import { useLoaderData } from 'react-router-dom';
 import BookProductBanner from './BookProductBanner/BookProductBanner';
 import CategoryWiseProductData from './CategoryWiseProductData/CategoryWiseProductData';
 
 const CategoryWiseProduct = () => {
-    // const { name } = useLoaderData();
     const [selectedDate, setSelectedDate] = useState(new Date());
     
     return (

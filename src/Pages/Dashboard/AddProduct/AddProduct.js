@@ -51,9 +51,9 @@ const AddProduct= () => {
         const date = formateTime();
 
         // const img = form.img.value;
-        // const img = form.img.files;
+        const img = form.img.files;
         // const img = form.img.FileList[0];
-        // console.log(img);
+        console.log(img);
 
 
 
@@ -73,7 +73,7 @@ const AddProduct= () => {
             originalprice, 
             condition,
             useyear,
-            // img,
+            img,
             description,
             date,
             categoryId,
@@ -83,6 +83,7 @@ const AddProduct= () => {
             email,
             uname
         }
+
         console.log(newProduct);
         fetch(`http://localhost:5000/dashboard/addproduct`, {
             method: 'POST',

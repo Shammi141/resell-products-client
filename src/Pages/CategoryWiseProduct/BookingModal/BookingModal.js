@@ -28,7 +28,7 @@ const BookingModal = ({products, selectedDate, setProducts}) => {
             location,
             email
         }
-        // console.log(booking);
+        //sending booking to db
         fetch('http://localhost:5000/bookings', {
             method: 'POST',
             headers: {
@@ -43,10 +43,9 @@ const BookingModal = ({products, selectedDate, setProducts}) => {
                 setProducts(null);
                 toast.success('Booking confirmed');
             }
-        })
-
-        
+        })        
     }
+
     return (
         <>
             <input type="checkbox" id="booking-modal" className="modal-toggle" />

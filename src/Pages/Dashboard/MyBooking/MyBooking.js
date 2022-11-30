@@ -5,7 +5,6 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 const MyBooking = () => {
 
     const {user} = useContext(AuthContext);
-
     const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
     const {data: bookings = []} = useQuery({
@@ -20,11 +19,10 @@ const MyBooking = () => {
             return data;
         }
     });
-    
+
     return (
         <div>
             <h3 className='text-3xl text-cyan-800 my-10 text-center font-bold'>All Of My Orders</h3>
-
             <div className='bg-gray-300 rounded-md'>
                 <div className="overflow-x-auto">
                     <table className="table w-full">
